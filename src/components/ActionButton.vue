@@ -1,16 +1,19 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
-  <button :class="{ primary: primary }">{{ text }}</button>
+  <button :class="buttonClass">{{ text }}</button>
 </template>
 
 <script>
 export default {
   name: "ActionButton",
-  props: ["text"],
-  data(){
-    return{
-      primary: true,
-    }
-  }
+  props: ["text", "type"],
+  computed: {
+    buttonClass() {
+      return {
+        [this.type]: true,
+      };
+    },
+  },
 };
 </script>
 
@@ -19,7 +22,7 @@ button {
   align-items: center;
   padding: 0.5em;
   border: 1px solid black;
-  border-radius: 18px;
+  border-radius: 17px;
   font-weight: 500;
   transition: 0.5s;
 }
@@ -32,6 +35,6 @@ button {
 }
 
 .secondary {
-
+  @apply bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white;
 }
 </style>

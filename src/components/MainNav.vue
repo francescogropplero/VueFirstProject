@@ -2,7 +2,7 @@
   <header class="w-full text-sm">
     <div class="fixed top-0 left-0 h-16 w-full bg-white">
       <div
-        class="mx-auto flex h-full flex-nowrap border-b border-solid border-brand-gray-1 px-8"
+        class="border-brand-gray-1 mx-auto flex h-full flex-nowrap border-b border-solid px-8"
       >
         <a :href="url" class="flex h-full items-center text-xl">{{
           company
@@ -23,8 +23,13 @@
         </nav>
 
         <div class="ml-auto flex h-full items-center">
-          <profile-image v-if="isLoggedIn"/>
-          <action-button v-else text="Sign in" @click="loginUser"/>
+          <profile-image v-if="isLoggedIn" />
+          <action-button
+            v-else
+            text="Sign in"
+            type="primary"
+            @click="loginUser"
+          />
         </div>
       </div>
     </div>
@@ -38,8 +43,8 @@ import ProfileImage from "@/components/ProfileImage.vue";
 export default {
   name: "MainNav",
   components: {
-     ActionButton,
-     ProfileImage,
+    ActionButton,
+    ProfileImage,
   },
   data() {
     return {
@@ -56,8 +61,8 @@ export default {
       isLoggedIn: false,
     };
   },
-  methods:{
-    loginUser(){
+  methods: {
+    loginUser() {
       this.isLoggedIn = true;
     },
   },

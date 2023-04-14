@@ -11,7 +11,7 @@ module.exports = {
       colors: {
         "brand-panna": "#f4f1de",
         "brand-arancio": "#e07a5f",
-        "brand-verde": "#81b29a",
+        "brand-verde": "#42D293",
         "brand-oro": "#f2cc8f",
         "brand-blue": "#3d405b",
         "brand-cyan": "#33a1fd",

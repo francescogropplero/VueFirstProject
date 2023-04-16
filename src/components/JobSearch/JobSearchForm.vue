@@ -8,8 +8,8 @@
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute left-0 -top-10">Role</label>
         <input
+          v-model="role"
           type="text"
-          :value="role"
           placeholder="Software Engineer"
           class="w-full text-lg font-normal focus:outline-none"
         />
@@ -19,27 +19,35 @@
         class="flex h-full items-center border-l border-r border-brand-grigio-2 bg-brand-grigio px-3"
         >in</span
       >
-      
 
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label class="absolute left-0 -top-10">Where?</label>
         <input
+          v-model="location"
           type="text"
-          :value="location"
           placeholder="Los Angeles"
           class="w-full text-lg font-normal focus:outline-none"
         />
       </div>
     </div>
 
-    <action-button text="Search" type="secondary" class="rounded-r-5xl" style="height: 100%; border-top-right-radius: 20px; border-bottom-right-radius: 20px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;"/>
+    <action-button
+      text="Search"
+      type="secondary"
+      class="rounded-r-5xl"
+      style="
+        height: 100%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      "
+    />
   </form>
 </template>
 
 <script>
-import ActionButton from "@/components/ActionButton.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default {
   name: "JobSearchForm",
@@ -48,7 +56,7 @@ export default {
     return {
       role: "",
       location: "",
-    }
-  }
+    };
+  },
 };
 </script>

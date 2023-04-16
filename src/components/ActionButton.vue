@@ -32,9 +32,9 @@ export default {
 
 <style scoped>
 button {
+  @apply rounded;
   align-items: center;
   padding: 0.5em;
-  border: 1px solid black;
   border-radius: 17px;
   font-weight: 500;
   transition: 0.5s;

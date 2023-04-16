@@ -1,0 +1,54 @@
+<template>
+  <form
+    class="flex h-12 w-full items-center rounded-3xl border border-solid border-brand-grigio-2"
+  >
+    <font-awesome-icon :icon="['fas', 'search']" class="ml-4 mr-3" />
+
+    <div class="flex h-full flex-1 flex-nowrap text-base font-light">
+      <div class="relative flex h-full flex-1 items-center pr-3">
+        <label class="absolute left-0 -top-10">Role</label>
+        <input
+          type="text"
+          :value="role"
+          placeholder="Software Engineer"
+          class="w-full text-lg font-normal focus:outline-none"
+        />
+      </div>
+
+      <span
+        class="flex h-full items-center border-l border-r border-brand-grigio-2 bg-brand-grigio px-3"
+        >in</span
+      >
+      
+
+      <div class="relative flex h-full flex-1 items-center pl-3">
+        <label class="absolute left-0 -top-10">Where?</label>
+        <input
+          type="text"
+          :value="location"
+          placeholder="Los Angeles"
+          class="w-full text-lg font-normal focus:outline-none"
+        />
+      </div>
+    </div>
+
+    <action-button text="Search" type="secondary" class="rounded-r-5xl" style="height: 100%; border-top-right-radius: 20px; border-bottom-right-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;"/>
+  </form>
+</template>
+
+<script>
+import ActionButton from "@/components/ActionButton.vue";
+
+export default {
+  name: "JobSearchForm",
+  components: { ActionButton },
+  data() {
+    return {
+      role: "",
+      location: "",
+    }
+  }
+};
+</script>

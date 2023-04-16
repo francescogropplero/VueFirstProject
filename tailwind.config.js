@@ -13,8 +13,10 @@ module.exports = {
         "brand-arancio": "#e07a5f",
         "brand-verde": "#42D293",
         "brand-oro": "#f2cc8f",
-        "brand-blue": "#3d405b",
+        "brand-blue": "#1a73e8",
         "brand-cyan": "#33a1fd",
+        "brand-grigio": "#edede9",
+        "brand-grigio-2": "#80868b",
       },
       boxShadow: {
         blue: "0 0 3px 3px #0096c7",

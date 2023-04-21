@@ -6,15 +6,21 @@ import MainNav from "@/components/Navigation/MainNav.vue";
 
 describe("MainNav", () => {
   const renderMainNav = () => {
+    const $route = {
+      name: "Home",
+    };
     render(MainNav, {
       global: {
+        mocks: {
+          $route,
+        },
         stubs: {
           FontAwesomeIcon: true,
           RouterLink: RouterLinkStub,
         },
       },
     });
-  }
+  };
   it("displays company name", () => {
     renderMainNav();
     const companyName = screen.getByText("Grop Careers");

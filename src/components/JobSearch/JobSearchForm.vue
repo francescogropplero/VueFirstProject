@@ -7,7 +7,10 @@
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute left-0 -top-10">Role</label>
-        <text-input placeholder="Software Engineer" @handle-input="role = $event" />
+        <text-input
+          placeholder="Software Engineer"
+          v-model="role"
+        />
       </div>
 
       <span
@@ -17,7 +20,10 @@
 
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label class="absolute left-0 -top-10">Where?</label>
-        <text-input placeholder="Los Angeles" @handle-input="location = $event"/>
+        <text-input
+          placeholder="Los Angeles"
+          v-model="location"
+        />
       </div>
     </div>
 
@@ -55,7 +61,7 @@ export default {
     },
     updateLocation(payload) {
       this.location = payload;
-    }
-  }
+    },
+  },
 };
 </script>

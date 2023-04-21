@@ -15,7 +15,7 @@ module.exports = {
         "brand-oro": "#f2cc8f",
         "brand-blue": "#1a73e8",
         "brand-cyan": "#33a1fd",
-        "brand-grigio": "#edede9",
+        "brand-grigio": "#e6e6e9",
         "brand-grigio-2": "#80868b",
       },
       boxShadow: {

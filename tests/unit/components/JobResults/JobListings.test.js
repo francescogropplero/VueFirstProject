@@ -14,7 +14,7 @@ describe("JobListings", () => {
     },
   });
 
-  const renderJobListing = ($route) => {
+  const renderJobListings = ($route) => {
     render(JobListings, {
       global: {
         mocks: {
@@ -31,7 +31,7 @@ describe("JobListings", () => {
     axios.get.mockResolvedValue({ data: [] });
     const $route = createRoute();
 
-    renderJobListing($route);
+    renderJobListings($route);
 
     expect(axios.get).toHaveBeenCalledWith("http://localhost:3000/jobs");
   });
@@ -41,9 +41,11 @@ describe("JobListings", () => {
     const queryParams = { page: "1" };
     const $route = createRoute(queryParams);
 
-    renderJobListing($route);
+    renderJobListings($route);
 
     const jobListings = await screen.findAllByRole("listitem");
     expect(jobListings).toHaveLength(10);
   });
+
+  
 });

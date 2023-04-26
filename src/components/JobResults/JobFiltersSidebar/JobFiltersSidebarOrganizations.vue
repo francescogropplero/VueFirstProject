@@ -3,21 +3,20 @@
     <div class="mt-5">
       <fieldset>
         <ul class="flex flex-row flex-wrap">
-          <li class="h-8 w-1/2">
-            <input type="checkbox" id="VueTube" class="mr-3" />
-            <label for="VueTube">VueTube</label>
-          </li>
-          <li class="h-8 w-1/2">
-            <input type="checkbox" id="Between Vue" class="mr-3" />
-            <label for="Between Vue">Between Vue</label>
-          </li>
-          <li class="h-8 w-1/2">
-            <input type="checkbox" id="Et Vue Brute" class="mr-3" />
-            <label for="Et Vue Brute">Et Vue Brute</label>
-          </li>
-          <li class="h-8 w-1/2">
-            <input type="checkbox" id="Vue and a Half Man" class="mr-3" />
-            <label for="Vue and a Half Man">Vue and a Half Man</label>
+          <li
+            v-for="organization in UNIQUE_ORGANIZATIONS"
+            :key="organization"
+            class="h-8 w-1/2"
+          >
+            <input
+              @change="selectOrganization"
+              v-model="selectedOrganizations"
+              :value="organization"
+              :id="organization"
+              class="mr-3"
+              type="checkbox"
+            />
+            <label :for="organization">{{ organization }}</label>
           </li>
         </ul>
       </fieldset>
@@ -27,9 +26,26 @@
 
 <script>
 import CollapsibleAccordion from "@/components/Shared/CollapsibleAccordion.vue";
+import { mapActions, mapState } from "pinia";
+import { useJobsStore, UNIQUE_ORGANIZATIONS } from "@/stores/jobs";
+import { useUserStore, ADD_SELECTED_ORGANIZATIONS } from "@/stores/user";
 
 export default {
   name: "JobFiltersSidebarOrganizations",
   components: { CollapsibleAccordion },
+  data() {
+    return {
+      selectedOrganizations: [],
+    };
+  },
+  methods: {
+    ...mapActions(useUserStore, [ADD_SELECTED_ORGANIZATIONS]),
+    selectOrganization() {
+      this.ADD_SELECTED_ORGANIZATIONS(this.selectedOrganizations);
+    },
+  },
+  computed: {
+    ...mapState(useJobsStore, [UNIQUE_ORGANIZATIONS]),
+  },
 };
 </script>

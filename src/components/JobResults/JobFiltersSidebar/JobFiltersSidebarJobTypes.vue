@@ -35,13 +35,14 @@ export default {
   components: { CollapsibleAccordion },
   data() {
     return {
-      selectedjobTypes: [],
+      selectedJobTypes: [],
     };
   },
   methods: {
     ...mapActions(useUserStore, [ADD_SELECTED_JOB_TYPES]),
     selectJobType() {
-      this.ADD_SELECTED_JOB_TYPES(this.selectedJobtypes);
+      this.ADD_SELECTED_JOB_TYPES(this.selectedJobTypes);
+      this.$router.push({ name: "JobResults" });
     },
   },
   computed: {

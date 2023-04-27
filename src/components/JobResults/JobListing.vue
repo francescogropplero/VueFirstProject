@@ -12,7 +12,13 @@
           </div>
           <div>
             <ul>
-              <li v-for="location in job.locations" :key="location" class="inline-block mr-5"><span>{{ location }}</span></li>
+              <li
+                v-for="location in job.locations"
+                :key="location"
+                class="mr-5 inline-block"
+              >
+                <span>{{ location }}</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -23,7 +29,12 @@
           <h3 class="mt-1 mb-2">Qualifications</h3>
           <div>
             <ul class="list-disc pl-8">
-              <li v-for="qualification in job.minimumQualifications" :key="qualification">{{ qualification }}</li>
+              <li
+                v-for="qualification in job.minimumQualifications"
+                :key="qualification"
+              >
+                {{ qualification }}
+              </li>
             </ul>
           </div>
         </div>
@@ -37,19 +48,15 @@
   </li>
 </template>
 
-<script>
-export default {
-  name: "JobListing",
-  props: {
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
     job: {
       type: Object,
       required: true,
     },
-  },
-  computed: {
-    jobPageLink() {
-      return `/jobs/results/${this.job.id}`
-    }
-  }
-};
+  });
+
+  const jobPageLink = computed(() => `/jobs/results/${props.job.id}`);
 </script>

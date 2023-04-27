@@ -15,10 +15,14 @@
         class="flex h-full items-center border-l border-r border-brand-grigio-2 bg-brand-grigio px-3"
         >in</span
       >
-    
+
       <div class="casaInput relative flex h-full flex-1 items-center pl-3">
         <label for="location" class="absolute left-0 -top-10">Where?</label>
-        <text-input id="location" placeholder="Los Angeles" v-model="location" />
+        <text-input
+          id="location"
+          placeholder="Los Angeles"
+          v-model="location"
+        />
       </div>
     </div>
 
@@ -37,32 +41,21 @@
   </form>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import TextInput from "../Shared/TextInput.vue";
 
-export default {
-  name: "JobSearchForm",
-  components: { ActionButton, TextInput },
-  data() {
-    return {
-      role: "",
-      location: "",
-    };
-  },
-  methods: {
-    updateRole(payload) {
-      this.role = payload;
-    },
-    updateLocation(payload) {
-      this.location = payload;
-    },
-    searchForJobs() {
-      this.$router.push({
-        name: "JobResults",
-        query: { role: this.role, location: this.location },
-      });
-    },
-  },
+const role = ref("");
+const location = ref("");
+
+const router = useRouter();
+
+const searchForJobs = () => {
+  router.push({
+    name: "JobResults",
+    query: { role: role.value, location: location.value },
+  });
 };
 </script>

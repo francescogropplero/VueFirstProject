@@ -3,11 +3,7 @@
     <div class="mt-5">
       <fieldset>
         <ul class="flex flex-row flex-wrap">
-          <li
-            v-for="value in uniqueValues"
-            :key="value"
-            class="h-8 w-1/2"
-          >
+          <li v-for="value in uniqueValues" :key="value" class="h-8 w-1/2">
             <input
               @change="selectValue"
               v-model="selectedValues"
@@ -24,7 +20,7 @@
   </collapsible-accordion>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { defineProps } from "vue";
@@ -37,7 +33,7 @@ const props = defineProps({
     required: true,
   },
   uniqueValues: {
-    type: Set,
+    type: Set<string>,
     required: true,
   },
   action: {
@@ -45,7 +41,7 @@ const props = defineProps({
     required: true,
   },
 });
-const selectedValues = ref([]);
+const selectedValues = ref<string[]>([]);
 
 const router = useRouter();
 

@@ -2,7 +2,7 @@ import type { Mock } from "vitest";
 import { createPinia, setActivePinia } from "pinia";
 import axios from "axios";
 
-import { useJobsStore } from "@/stores/jobs";
+import { INCLUDE_JOB_BY_DEGREE, useJobsStore } from "@/stores/jobs";
 import { useUserStore } from "@/stores/user";
 import { createJob } from "../../utils/createJob";
 
@@ -79,6 +79,19 @@ describe("getters", () => {
         const result = store.INCLUDE_JOB_BY_DEGREE(job);
         expect(result).toBe(true);
       });
+    });
+  });
+
+  describe("INCLUDE_JOB_BY_SKILL", () => {
+    it("identifies if job matches user's skill", () => {
+      const userStore = useUserStore();
+      userStore.skillsSearchTerm = "Vue";
+      const store = useJobsStore();
+      const job = createJob({ title: "Vue Developer" });
+
+      const result = store.INCLUDE_JOB_BY_SKILL(job);
+
+      expect(result).toBe(true);
     });
   });
 });

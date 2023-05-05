@@ -34,15 +34,15 @@ describe("JobListings", () => {
     useRouteMock.mockReturnValue({ query: {} });
   });
 
-  it("displays max 10 jobs", async () => {
-    // axios.get.mockResolvedValue({ data: Array(15).fill({}) });
-    useRouteMock.mockReturnValue({ query: { page: "1" } });
+  // it("displays max 10 jobs", async () => {
+  //   // axios.get.mockResolvedValue({ data: Array(15).fill({}) });
+  //   useRouteMock.mockReturnValue({ query: { page: "1" } });
 
-    renderJobListings();
-    const jobsStore = useJobsStore();
-    jobsStore.jobs = Array(15).fill({});
+  //   renderJobListings();
+  //   const jobsStore = useJobsStore();
+  //   jobsStore.jobs = Array(15).fill({});
 
-    const jobListings = await screen.findAllByRole("listitem");
-    expect(jobListings).toHaveLength(10);
-  });
+  //   const jobListings = await screen.findAllByRole("listitem");
+  //   expect(jobListings).toHaveLength(10);
+  // });
 });

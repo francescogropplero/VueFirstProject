@@ -30,6 +30,10 @@ describe("JobListings", () => {
     expect(jobsStore.FETCH_JOBS).toHaveBeenCalled();
   });
 
+  it("fetches degrees", () => {
+    useRouteMock.mockReturnValue({ query: {} });
+  });
+
   it("displays max 10 jobs", async () => {
     // axios.get.mockResolvedValue({ data: Array(15).fill({}) });
     useRouteMock.mockReturnValue({ query: { page: "1" } });

@@ -2,6 +2,7 @@ import axios from "axios";
 import type { Job } from "@/api/types";
 
 const getJobs = async () => {
+  //@ts-expect-error
   const baseUrl = import.meta.env.VITE_APP_API_URL;
   const url = `${baseUrl}/jobs`;
   const response = await axios.get<Job[]>(url);

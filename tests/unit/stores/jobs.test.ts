@@ -67,4 +67,18 @@ describe("getters", () => {
       });
     });
   });
+
+  describe("INCLUDE_JOB_BY_DEGREE", () => {
+    describe("when the user has not selected any degrees", () => {
+      it("includes job", () => {
+        const userStore = useUserStore();
+        userStore.selectedDegrees = [];
+        const store = useJobsStore();
+        const job = createJob();
+
+        const result = store.INCLUDE_JOB_BY_DEGREE(job);
+        expect(result).toBe(true);
+      });
+    });
+  });
 });

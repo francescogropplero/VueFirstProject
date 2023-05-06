@@ -93,5 +93,29 @@ describe("getters", () => {
 
       expect(result).toBe(true);
     });
+
+    it("handles inconsistent character casing", () => {
+      const userStore = useUserStore();
+      userStore.skillsSearchTerm = "vuE";
+      const store = useJobsStore();
+      const job = createJob({ title: "Vue Developer" });
+
+      const result = store.INCLUDE_JOB_BY_SKILL(job);
+
+      expect(result).toBe(true);
+    });
+
+    describe("when user hasnt entered any skill", () => {
+      it("includes jobs", () => {
+        const userStore = useUserStore();
+        userStore.skillsSearchTerm = "";
+        const store = useJobsStore();
+        const job = createJob({ title: "Vue Developer" });
+
+        const result = store.INCLUDE_JOB_BY_SKILL(job);
+
+        expect(result).toBe(true);
+      });
+    });
   });
 });

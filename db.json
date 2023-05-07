@@ -33,6 +33,18 @@
       "img": "https://images.unsplash.com/photo-1511376777868-611b54f68947",
       "title": "Executive Leadership",
       "description": "Be a leader for everyone. Leadership builds character."
+    },
+    {
+      "id": 3,
+      "img": "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "title": "Web Design",
+      "description": "Design amazing websites from scratch."
+    },
+    {
+      "id": 4,
+      "img": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "title": "Data Analytics",
+      "description": "Uncover valuable insights from your data and make informed decisions."
     }
   ],
   "jobs": [

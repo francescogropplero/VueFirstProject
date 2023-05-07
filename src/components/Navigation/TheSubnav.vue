@@ -10,6 +10,15 @@
           jobs matched</span
         >
       </div>
+      <div v-else>
+        <font-awesome-icon :icon="['fas', 'search']" class="mr-3" />
+        <span>Find your next job at </span>
+        <router-link
+          :to="{ name: 'JobResults' }"
+          class="h-full items-center text-brand-cyan"
+          >Grop Careers</router-link
+        >
+      </div>
     </div>
   </div>
 </template>

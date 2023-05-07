@@ -1,27 +1,10 @@
+## How to run:
 
+1. npm install
+2. copy paste this line inside a .env.development file "VITE_APP_API_URL=http://localhost:3000"
+3. npm run backend
+4. npm run dev
 
-## Project Setup
+### Run Unit Tests
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
 npm run test:unit
-```
-
-

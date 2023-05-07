@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mx-10 mt-10 flex max-w-md">
-      <img :src="src" class="max-h-52 max-w-xs object-cover" />
+      <img :src="src" class="h-52 w-80 object-cover" />
       <div class="ml-3">
         <a href="#" class="text-lg text-brand-blue">{{ title }}</a>
         <p>{{ descr }}</p>
@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   props: {
     title: String,

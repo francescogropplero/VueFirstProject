@@ -38,7 +38,6 @@
 </template>
 
 <script lang="ts" setup>
-import { mapActions, mapState } from "pinia";
 import { useUserStore } from "@/stores/user";
 import { ref, computed } from "vue";
 

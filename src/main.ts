@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { initializeApp } from "firebase/app";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faAngleDown,
